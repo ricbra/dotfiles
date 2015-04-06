@@ -3,18 +3,17 @@ My dotfiles
 
 This repository contains:
 
-* My [vim config](http://github.com/willdurand/vim-config);
-* My [zsh config](http://github.com/willdurand/zsh-config);
+* My [zsh config](http://github.com/ricbra/zsh-config);
 * My Git config;
 * And some other useful dotfiles.
 
-![](https://raw.github.com/willdurand/dotfiles/master/doc/screenshot.png)
-
+Its just a stripped down version of [William Durand's dotfiles.](git@github.com:willdurand/dotfiles.git).
+Thank you William for you excellent work :).
 
 Installation
 ------------
 
-    $ git clone https://github.com/willdurand/dotfiles.git --recursive
+    $ git clone https://github.com/ricbra/dotfiles.git --recursive
     $ cd dotfiles && bin/install
 
 You can tweak OSX by running the following script:
