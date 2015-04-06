@@ -111,10 +111,6 @@ hash tmutil &> /dev/null && sudo tmutil disablelocal
 # Allow text selection in the Quick Look window
 defaults write com.apple.finder QLEnableTextSelection -bool true
 
-# Capture should speak English
-sudo cp $CURRENT/osx/ScreenCapture.strings /System/Library/CoreServices/SystemUIServer.app/Contents/Resources/French.lproj/ScreenCapture.strings
-killall SystemUIServer
-
 # Disable the sudden motion sensor as it’s not useful for SSDs
 sudo pmset -a sms 0
 
