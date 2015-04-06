@@ -42,4 +42,4 @@
 	a = add --all
 
 [push]
-	default = simple
+	default = current
