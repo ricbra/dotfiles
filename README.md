@@ -7,7 +7,7 @@ This repository contains:
 * My Git config;
 * And some other useful dotfiles.
 
-Its just a stripped down version of [William Durand's dotfiles.](git@github.com:willdurand/dotfiles.git).
+Its just a stripped down version of [William Durand dotfiles](git@github.com:willdurand/dotfiles.git).
 Thank you William for you excellent work :).
 
 Installation
