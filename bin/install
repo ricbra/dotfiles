@@ -1,0 +1,81 @@
+#!/usr/bin/env bash
+
+CURRENT="`pwd`"
+INSTALL_ZSH=true
+CONFIG_ONLY=false
+
+set -e
+
+info () {
+    printf "  [ \033[00;34m..\033[0m ] $1"
+}
+
+success () {
+    printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
+}
+
+fail () {
+    printf "\r\033[2K  [\033[0;31mFAIL\033[0m] $1\n"
+    echo ''
+    exit
+}
+
+link_files () {
+    if [ -L "$2" ] ; then
+        rm -f "$2"
+    fi
+
+    ln -s "$CURRENT/$1" "$2"
+    success "linked $1 to $2"
+}
+
+ensure_dir () {
+    if [ ! -d "$1" ] ; then
+        mkdir -p "$1"
+
+        success "created directory $1"
+    fi
+}
+
+setup_git () {
+    link_files git/git-completion.bash ~/.git-completion.sh
+    link_files git/gitattributes ~/.gitattributes
+    link_files git/gitconfig ~/.gitconfig
+    link_files git/gitignore_global ~/.gitignore_global
+
+    git config --global core.excludesfile ~/.gitignore_global
+}
+
+
+# git
+setup_git
+
+# others
+link_files dir_colors ~/.dir_colors
+
+# Parsing options
+if [ $# -gt 0 ] ; then
+    for arg in $@ ; do
+        if [ $arg = '--no-zsh' ] ; then
+            INSTALL_ZSH=false
+        elif [ $arg = '--config-only' ] ; then
+            CONFIG_ONLY=true
+        fi
+    done
+fi
+
+# ZSH
+if $CONFIG_ONLY ; then
+    info "Skipped submodules installation"
+else
+    # Submodules
+    git submodule update --init
+
+    if $INSTALL_ZSH ; then
+        cd $CURRENT/zsh-config
+        bin/install
+    fi
+fi
+
+echo ''
+echo '  All installed!'

@@ -1,0 +1,45 @@
+[user]
+    name = Richard van den Brand
+    email = richard@vandenbrand.org
+
+[color]
+    ui = auto
+    branch = auto
+    diff = auto
+    status = auto
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow
+    frag = magenta
+ 	old = red
+    new = green
+
+[color "status"]
+    added = green
+    changed = yellow
+    untracked = red
+
+[core]
+    ui = true
+    editor = vim
+    autocrlf = false
+    whitespace = trailing-space,space-before-tab
+	excludesfile = /home/vagrant/.gitignore_global
+
+[diff "exif"]
+    textconv = exiftool
+
+[alias]
+    lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset' --date=relative
+	s = status
+	c = commit
+	d = diff
+	a = add --all
+
+[push]
+	default = simple
