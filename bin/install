@@ -51,7 +51,13 @@ setup_git () {
 setup_git
 
 # others
-link_files dir_colors ~/.dir_colors
+if [ `uname` = 'Linux' ] ; then
+    DIR_COLORS='dir_colors_linux'
+else
+    DIR_COLORS='dir_colors_osx'
+fi
+
+link_files $DIR_COLORS ~/.dir_colors
 
 # Parsing options
 if [ $# -gt 0 ] ; then
