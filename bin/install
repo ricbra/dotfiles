@@ -58,6 +58,7 @@ else
 fi
 
 link_files $DIR_COLORS ~/.dir_colors
+link_files tmux/.tmux.conf ~/.tmux.conf
 
 # Parsing options
 if [ $# -gt 0 ] ; then
