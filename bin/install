@@ -59,6 +59,7 @@ fi
 
 link_files $DIR_COLORS ~/.dir_colors
 link_files tmux/.tmux.conf ~/.tmux.conf
+link_files .phpspec.yml ~/.phpspec.yml
 
 # Parsing options
 if [ $# -gt 0 ] ; then

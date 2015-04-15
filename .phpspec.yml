@@ -1,0 +1,3 @@
+formatter.name: pretty
+code_generation: false
+stop_on_failure: true
