@@ -42,6 +42,7 @@
     a = add --all
     pl = pull --rebase origin master
     ps = push
+    ckb = checkout -b
 
 [push]
 	default = current
