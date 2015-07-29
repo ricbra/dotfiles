@@ -29,17 +29,19 @@
     editor = vim
     autocrlf = false
     whitespace = trailing-space,space-before-tab
-    excludesfile = /Users/richard/.gitignore_global
+	excludesfile = /Users/richard/.gitignore_global
 
 [diff "exif"]
     textconv = exiftool
 
 [alias]
     lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%an%d%Creset %s %Cgreen(%cr)%Creset' --date=relative
-	s = status
-	c = commit
-	d = diff
-	a = add --all
+    s = status
+    c = commit
+    d = diff
+    a = add --all
+    pl = pull --rebase origin master
+    ps = push
 
 [push]
 	default = current
