@@ -93,10 +93,16 @@ defaults write com.apple.dock show-process-indicators -bool true
 defaults write com.apple.dock launchanim -bool true
 
 # Set dock tile size
-defaults write com.apple.dock tilesize -int 70
+defaults write com.apple.dock tilesize -int 60
 
 # set dock tile large size
 defaults write com.apple.dock largesize -int 95
+
+# autohide dock
+defaults write com.apple.dock autohide -bool true
+
+# remove delay
+defaults write com.apple.Dock autohide-delay -float 0
 
 # Speed up Mission Control animations
 defaults write com.apple.dock expose-animation-duration -float 0.1
