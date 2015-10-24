@@ -102,7 +102,7 @@ defaults write com.apple.dock largesize -int 85
 defaults write com.apple.dock autohide -bool true
 
 # remove delay
-defaults write com.apple.Dock autohide-delay -float 0
+defaults write com.apple.dock autohide-delay -float 0
 
 # Speed up Mission Control animations
 defaults write com.apple.dock expose-animation-duration -float 0.1
