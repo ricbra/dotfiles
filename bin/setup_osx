@@ -135,3 +135,6 @@ defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
 # Disable natural scrolling
 defaults write -g com.apple.swipescrolldirection -bool false
+
+# Disable useless dashboard
+defaults write com.apple.dashboard mcx-disabled -boolean YES && killall Dock
