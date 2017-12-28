@@ -43,6 +43,7 @@
     pl = pull --rebase origin master
     ps = push
     ckb = checkout -b
+    wip = commit -m 'wip' -n
 
 [push]
 	default = current
